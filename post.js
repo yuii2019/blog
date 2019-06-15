@@ -1,10 +1,8 @@
 // jshint esversion: 6
 // const {MongoClient, ObjectId} = require('mongodb');
 const mongoose = require('mongoose');
-const username = 'admin';
-const password = 'admin';
-const dbname = 'blog';
-mongoose.connect(`mongodb+srv://${username}:${password}@cluster0-41nx2.mongodb.net/${dbname}?retryWrites=true&w=majority`, {useNewUrlParser: true});
+require('./config.js');
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0-41nx2.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`, {useNewUrlParser: true});
 
 mongoose.connection.once('open', () => console.log('Connection successed!'));
 

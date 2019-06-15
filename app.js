@@ -1,10 +1,11 @@
 //jshint esversion:6
-
+const dotenv = require("dotenv");
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const rs = require("randomstring");
 const PostManager = require('./post.js');
+require('./config.js');
 console.log(PostManager);
 const postManager = new PostManager();
 
@@ -77,6 +78,6 @@ app.get('/posts/:id', (req, res) => {
 
 
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("Server started on port 3000");
 });
