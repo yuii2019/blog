@@ -1,6 +1,5 @@
 //jshint esversion:6
-const dotenv = require("dotenv");
-const express = require("express");
+// const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const rs = require("randomstring");
